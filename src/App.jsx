@@ -19,17 +19,16 @@ class IssueAdd extends React.Component {
 
 class IssueRow extends React.Component {
     render() {
-        const borderStyle = {border: "solid 3px grey", padding: 4};
         const issue = this.props.issue;
         return(
             <tr>
-                <td style = {borderStyle}>{issue.id}</td>
-                <td style = {borderStyle}>{issue.status}</td>
-                <td style = {borderStyle}>{issue.owner}</td>
-                <td style = {borderStyle}>{issue.created.toDateString()}</td>
-                <td style = {borderStyle}>{issue.effort}</td>
-                <td style = {borderStyle}>{issue.completionDate ? issue.completionDate.toDateString() : ''}</td>
-                <td style = {borderStyle}>{issue.title}</td>
+                <td>{issue.id}</td>
+                <td>{issue.status}</td>
+                <td>{issue.owner}</td>
+                <td>{issue.created.toDateString()}</td>
+                <td>{issue.effort}</td>
+                <td>{issue.completionDate ? issue.completionDate.toDateString() : ''}</td>
+                <td>{issue.title}</td>
             </tr>
         )
     }
@@ -37,17 +36,18 @@ class IssueRow extends React.Component {
 class IssueTable extends React.Component {
     render() {
         const issueRows = this.props.issues.map(issue => <IssueRow key={issue.id} issue = {issue} />)
-        const borderStyle = {border: "solid grey 3px", padding: 8}
         return(        
-                <table style = {{borderCollapse: "collapse"}}>
+                <table className="table-border">
                     <thead>
-                        <td style = {borderStyle}>Id</td>
-                        <td style = {borderStyle}>Status</td>
-                        <td style = {borderStyle}>Owner</td>
-                        <td style = {borderStyle}>Created</td>
-                        <td style = {borderStyle}>Effort</td>
-                        <td style = {borderStyle}>Completition Date</td>
-                        <td style = {borderStyle}>Title</td>
+                        <tr>
+                            <th>Id</th>
+                            <th>Status</th>
+                            <th>Owner</th>
+                            <th>Created</th>
+                            <th>Effort</th>
+                            <th>Completition Date</th>
+                            <th>Title</th>
+                        </tr>
                     </thead>
                     <tbody>
                         {issueRows}

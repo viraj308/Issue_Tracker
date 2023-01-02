@@ -68,44 +68,43 @@ var IssueRow = function (_React$Component3) {
     _createClass(IssueRow, [{
         key: "render",
         value: function render() {
-            var borderStyle = { border: "solid 3px grey", padding: 4 };
             var issue = this.props.issue;
             return React.createElement(
                 "tr",
                 null,
                 React.createElement(
                     "td",
-                    { style: borderStyle },
+                    null,
                     issue.id
                 ),
                 React.createElement(
                     "td",
-                    { style: borderStyle },
+                    null,
                     issue.status
                 ),
                 React.createElement(
                     "td",
-                    { style: borderStyle },
+                    null,
                     issue.owner
                 ),
                 React.createElement(
                     "td",
-                    { style: borderStyle },
+                    null,
                     issue.created.toDateString()
                 ),
                 React.createElement(
                     "td",
-                    { style: borderStyle },
+                    null,
                     issue.effort
                 ),
                 React.createElement(
                     "td",
-                    { style: borderStyle },
+                    null,
                     issue.completionDate ? issue.completionDate.toDateString() : ''
                 ),
                 React.createElement(
                     "td",
-                    { style: borderStyle },
+                    null,
                     issue.title
                 )
             );
@@ -130,47 +129,50 @@ var IssueTable = function (_React$Component4) {
             var issueRows = this.props.issues.map(function (issue) {
                 return React.createElement(IssueRow, { key: issue.id, issue: issue });
             });
-            var borderStyle = { border: "solid grey 3px", padding: 8 };
             return React.createElement(
                 "table",
-                { style: { borderCollapse: "collapse" } },
+                { className: "table-border" },
                 React.createElement(
                     "thead",
                     null,
                     React.createElement(
-                        "td",
-                        { style: borderStyle },
-                        "Id"
-                    ),
-                    React.createElement(
-                        "td",
-                        { style: borderStyle },
-                        "Status"
-                    ),
-                    React.createElement(
-                        "td",
-                        { style: borderStyle },
-                        "Owner"
-                    ),
-                    React.createElement(
-                        "td",
-                        { style: borderStyle },
-                        "Created"
-                    ),
-                    React.createElement(
-                        "td",
-                        { style: borderStyle },
-                        "Effort"
-                    ),
-                    React.createElement(
-                        "td",
-                        { style: borderStyle },
-                        "Completition Date"
-                    ),
-                    React.createElement(
-                        "td",
-                        { style: borderStyle },
-                        "Title"
+                        "tr",
+                        null,
+                        React.createElement(
+                            "th",
+                            null,
+                            "Id"
+                        ),
+                        React.createElement(
+                            "th",
+                            null,
+                            "Status"
+                        ),
+                        React.createElement(
+                            "th",
+                            null,
+                            "Owner"
+                        ),
+                        React.createElement(
+                            "th",
+                            null,
+                            "Created"
+                        ),
+                        React.createElement(
+                            "th",
+                            null,
+                            "Effort"
+                        ),
+                        React.createElement(
+                            "th",
+                            null,
+                            "Completition Date"
+                        ),
+                        React.createElement(
+                            "th",
+                            null,
+                            "Title"
+                        )
                     )
                 ),
                 React.createElement(
